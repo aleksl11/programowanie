@@ -2,7 +2,7 @@ import java.util.Locale;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Lab02 {
+public class Lab03 {
     public static void main(String[] args) {
         String a="ala", b="Aleksandra", c="kajak", d="12321";
         System.out.println(czyPalindrom(a));
@@ -90,6 +90,7 @@ public class Lab02 {
     }
 
     //zadanie 5
+    //zmieniam imie na Olo zeby bylo palindromem
     public static boolean czyPalindrom(String text) {
         int dlugosc = text.length() - 1;
         text.toLowerCase(Locale.ROOT);
