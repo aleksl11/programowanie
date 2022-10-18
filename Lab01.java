@@ -5,7 +5,7 @@ import static java.lang.Math.sqrt;
 
 import java.util.Random;
 
-public class Main {
+public class Lab01 {
     public static void main(String[] args) {
         //System.out.println(getName());
         //System.out.println(getAge());
