@@ -90,7 +90,7 @@ public class Lab03 {
     }
 
     //zadanie 5
-    //zmieniam imie na Olo zeby bylo palindromem
+
     public static boolean czyPalindrom(String text) {
         int dlugosc = text.length() - 1;
         text.toLowerCase(Locale.ROOT);
