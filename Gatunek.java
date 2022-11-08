@@ -23,7 +23,7 @@ public class Gatunek {
         System.out.println("Liczba chromosomow x: "+liczbaChromoX);
     }
     public Gatunek kopiaGatunku(){
-        Gatunek g2=new Gatunek(nazwaRodzaju,nazwaGatunku,liczbaChromo2n,liczbaChromoX);
-        return g2;
+        Gatunek klon=new Gatunek(nazwaRodzaju,nazwaGatunku,liczbaChromo2n,liczbaChromoX);
+        return klon;
     }
 }
