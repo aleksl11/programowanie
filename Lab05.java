@@ -1,5 +1,5 @@
 
-public class Main{
+public class Lab05{
     public static void main(String[] args) {
         zadanie3();
     }
