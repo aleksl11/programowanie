@@ -9,10 +9,24 @@ public class SamochodOsobowy extends Samochod {
 
     public SamochodOsobowy(String marka, String model, String nadwozie, String kolor, int rokProdukcji, double przebieg, double waga, double pojemnosc, int iloscOsob) {
         super(marka, model, nadwozie, kolor, rokProdukcji, przebieg);
-        this.waga = waga;
-        this.pojemnosc = pojemnosc;
+         if(waga>=2&&waga<=4.5)
+            this.waga = waga;
+        if(pojemnosc>=0.8&&pojemnosc<=3)
+            this.pojemnosc = pojemnosc;
         this.iloscOsob = iloscOsob;
     }
+
+    public void setWaga(double waga) {
+        if(waga>=2&&waga<=4.5) this.waga = waga;
+        else System.out.println("Niepoprawna waga.");
+    }
+
+    public void setPojemnosc(double pojemnosc) {
+        if(pojemnosc>=0.8&&pojemnosc<=3)
+            this.pojemnosc = pojemnosc;
+        else System.out.println("Niepoprawna pojemnosc.");
+    }
+
     public void informacje(){
         System.out.println("Marka: "+marka+
                 "\nModel: "+model+
