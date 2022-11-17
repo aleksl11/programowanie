@@ -11,6 +11,10 @@ class Prostokat extends Figura{
         this.wys = wys;
         this.szer = szer;
     }
+    
+    void setPunkt(double x, double y){
+        punkt=new Punkt(x,y);
+    }
 
     double getPowierzchnia() {
         return (szer * wys);
