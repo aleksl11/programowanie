@@ -20,9 +20,8 @@ public class Main {
         System.out.println(kolo.wSrodku(c));
         System.out.println(kolo.wSrodku(a));
         Prostokat p1=new Prostokat(2,3,"zielony");
-        //p1.punkt.setX(1);
-        //p1.punkt.setY(3); //poprawic punkt
-        //p1.przesun(3,5);
+        p1.setPunkt(1,2);
+        p1.przesun(3,5);
         Kwadrat k1=new Kwadrat(3,3);
         System.out.println(p1.opis());
         Trojkat t1=new Trojkat(1,3);
