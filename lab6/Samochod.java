@@ -9,8 +9,17 @@ public class Samochod {
         this.nadwozie = nadwozie;
         this.kolor = kolor;
         this.rokProdukcji = rokProdukcji;
-        this.przebieg = przebieg;
+        if(przebieg>=0)
+            this.przebieg = przebieg;
+
     }
+
+    public void setPrzebieg(double przebieg) {
+        if(przebieg>=0)
+            this.przebieg = przebieg;
+        else System.out.println("Przebieg musi byc wartoscia dodatnia.");
+    }
+    
     public void informacje(){
         System.out.println("Marka: "+marka+
                         "\nModel: "+model+
