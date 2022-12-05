@@ -5,7 +5,7 @@ class Uczestnicy {
     String imie;
 
     public Uczestnicy(int wiek, String imie) {
-        
+
         this.wiek = wiek;
         this.imie = imie;
     }
@@ -30,7 +30,9 @@ class Uczestnicy {
 
 public class Main {
     public static void main(String[] args) {
-        zadanie1();
+        //zadanie1();
+        zadanie2();
+        //zadanie3();
     }
     public static void zadanie1(){
         List<Uczestnicy> u = new ArrayList<>();
@@ -56,6 +58,45 @@ public class Main {
             if(i.wiek>=18)
                 System.out.println(i);
         }
-       
+
+    }
+    public static void zadanie2(){
+        List<Uczestnicy> lista = new ArrayList<>();
+
+        lista.add(new Uczestnicy(19,"Adam"));
+        lista.add(new Uczestnicy(17,"Ala"));
+        lista.add(new Uczestnicy(16,"Jan"));
+        lista.add(new Uczestnicy(20,"Ewa"));
+        lista.add(new Uczestnicy(18,"Kamil"));
+        lista.add(new Uczestnicy(19,"Piotr"));
+        List<Uczestnicy>podLista =lista.subList(1,4);
+        lista.subList(1,4).clear();
+        for (Uczestnicy i: lista) {
+            if(i.wiek>=18)
+                System.out.println(i);
+        }
+
+    }
+    public static void zadanie3(){
+        List<Integer> l1=new ArrayList<Integer>();
+        l1.add(3);
+        l1.add(1);
+        l1.add(7);
+        l1.add(12);
+        l1.add(9);
+        l1.add(23);
+        l1.add(5);
+        l1.add(1);
+
+        List<Integer> l2=new ArrayList<Integer>();
+
+        ListIterator<Integer> integerListIterator=l1.listIterator(l1.size());
+        while(integerListIterator.hasPrevious()){
+            l2.add(integerListIterator.previous());
+        }
+        ListIterator<Integer> integerListIterator2=l2.listIterator();
+        while (integerListIterator2.hasNext()){
+            System.out.println(integerListIterator2.next());
+        }
     }
 }
