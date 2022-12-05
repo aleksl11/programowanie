@@ -1,5 +1,8 @@
+import java.io.InputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.zip.CheckedInputStream;
+import java.util.zip.Checksum;
 
 import static java.lang.Math.sqrt;
 import static java.lang.Math.PI;
@@ -10,14 +13,32 @@ class BlednaWartoscSilni extends Exception{
     }
 
 }
-class NieprawidlowyAdresException extends Exception{
+class NieprawidlowyAdresException extends Exception {
+    public NieprawidlowyAdresException(String message) {
+        super(message);
+    }
+}
+class Adres{
+    String miasto,ulica,kodPocztowy;
+    int nrDomu;
 
+    public Adres(String miasto, String ulica, String kodPocztowy, int nrDomu) throws NieprawidlowyAdresException {
+        if(miasto == null) throw new NieprawidlowyAdresException("Miasto nie moze byc nullem");
+        this.miasto = miasto;
+        if(ulica == null) throw new NieprawidlowyAdresException("Ulica nie moze byc nullem");
+        this.ulica = ulica;
+        if(kodPocztowy == null) throw new NieprawidlowyAdresException("Kod pocztowy nie moze byc nullem");
+        this.kodPocztowy = kodPocztowy;
+        if(nrDomu <= 0) throw new NieprawidlowyAdresException("Numer domu nie moze byc mniejszy lun rowny zero");
+        this.nrDomu = nrDomu;
+    }
 }
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NieprawidlowyAdresException {
         //zadanie1();
-        zadanie2();
+        //zadanie2();
+        zadanie3();
     }
     public static void zadanie1(){
         Scanner input= new Scanner(System.in);
@@ -40,8 +61,8 @@ public class Main {
     }
     public static void zadanie2(){
         try{
-            System.out.println("2! = "+silnia(2));
             System.out.println("-2! = "+silnia(-2));
+            System.out.println("2! = "+silnia(2));
         }catch (BlednaWartoscSilni e){
             System.out.println("error: "+e.getMessage());
         }
@@ -55,7 +76,9 @@ public class Main {
         }
         return wynik;
     }
-    public static void zadanie3(){
-
+    public static void zadanie3() throws NieprawidlowyAdresException {
+        Adres a1=new Adres("a","b","12-123",12);
+        Adres a2=new Adres(null,"qw",null,-2);
+        Adres a3=new Adres("asd",null,"zxc",0);
     }
 }
